@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="eN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Contador Puntos de Chinchon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="chinchon.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a80cd1a228.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Chinchon</title>
+</head>
+
+<body>
+   <div id="wholeAppId" class="wholeapp">
+
+     <!-- Nav SHEET --> 
+    <nav class="navbar">
+            <h1 class="h1nav">Chinchon score keeper</h1>
+            <div class="languages">
+             <a href="chinchon-es.html" class="langimg spanish">  <img src="imgs/es.png" width="30" height="30" ></a>
+             <a href="../chinchon-en.html" class="langimg english"> <img src="imgs/en.png" width="30" height="30"></a>
+             </div>
+      </nav>
+    <div id="OptionsHome" class="options">
+    <button id="newGame" class="option-button "><i class="fa-solid fa-diamond"></i>New Game</button>
+    <button id="instructions" class="option-button"><i class="fa-solid fa-clipboard"></i>Instructions</button>
+    </div>
+<!-- Setting Options SHEET --> 
+
+    <div id="selectOptions" class="game hide ">
+        <div class="players">
+            <h4 class="Players-sign"> Players</h4>
+            <ul id="playersUl" class="playersUl">
+            </ul>
+            <input type="text" id="player" placeholder="Name" class="input-game">
+            <span id="addPlayer" class="buttom-game" onclick="newElement()">Add</span>
+        </div>
+        <div class="objective">
+            <h4 class="Players-sign objectivePoints">Select top score</h4>
+            <button id="to70" class="buttom-game" ">70</button>
+            <button id="to100" class="buttom-game">100</button>
+        </div>    
+        <button id="start" class="buttom-game">Let's Start!</button>
+    </div>
+
+    <!-- Game SHEET --> 
+    <section id="theGame"class="started-game hide">
+       <div class="playing-player">
+        <h3 id="p1"></h3>
+             <div class=" scoresFather ">
+            <p class="p1Score score">0</p>
+            <input type="number"  id="newpointP1" class="newpoint">
+            <input type="button" value="+" id="add-p1" class="add">
+            <input type="button" value="-" id="rest-p1" class="rest">
+             </div>
+       </div>
+       <div class="playing-player">
+        <h3 id="p2"></h3>
+             <div class=" scoresFather ">
+            <p class="p2Score score">0</p>
+            <input type="number"  id="newpointP2" class="newpoint">
+            <input type="button" value="+" id="add-p2" class="add">
+            <input type="button" value="-" id="rest-p2" class="rest">
+             </div>
+       </div>
+       <div class="playing-player">
+        <h3 id="p3"></h3>
+            <div class=" scoresFather hide">
+            <p class="p3Score score">0</p>
+             <input type="number"  id="newpointP3" class="newpoint">
+             <input type="button" value="+" id="add-p3" class="add">
+             <input type="button" value="-" id="rest-p3" class="rest">
+             </div>
+       </div>
+       <div class="playing-player">
+        <h3 id="p4"></h3>
+            <div class=" scoresFather hide">
+             <p class="p4Score score">0</p>
+             <input type="number"   id="newpointP4"class="newpoint">
+             <input type="button" value="+" id="add-p4" class="add">
+             <input type="button" value="-" id="rest-p4" class="rest">
+            </div>
+         </div>
+        <input type="button" value="Restart" id="Restart" class="home">
+       <input type="button" value="Home" id="go-home" class="home" onClick="window.location.reload(true)">
+    </section>
+
+        <!-- Footer --> 
+
+    <footer>
+        <p class="produced">Produced by Joaquin Caceres</p>
+        <a class="media" target="_blank" href="mailto:joaquniarielcaceres@gmail.com"><i class="fa-sharp fa-regular fa-envelope"></i>Contact</a>
+    </footer>
+    </div>  
+
+    <!-- INSTRUCTION SHEET --> 
+    <section class="instructions hide" id="instructions-id" >
+        <ul class="instructions-ul">
+            <img class="cardimg" src="imgs/espada.png" alt="esa"><li class="instructions-list">Cards game for 2 to 4 players<li>
+            <img class="cardimg" src="imgs/copas.png" alt="esa"><li class="instructions-list">The objective is to finish the game with the lowest amount of points</li>
+            <img class="cardimg" src="imgs/oro.png" alt="esa"><li class="instructions-list">Each round starts with 7 cards for each player and face up on the table</li>
+            <img class="cardimg basto" src="imgs/basto.png" alt="esa"><li class="instructions-list">The player at the right starts picking up a card, always pick a card to start your turn and droping one to finish it</li>
+            <img class="cardimg" src="imgs/espada.png" alt="esa"><li class="instructions-list">To win you have to make combos of 3 or 4 cards, of the same number or consecutive numbers and same kind, the remaining cards will be your points</li>
+            <img class="cardimg" src="imgs/copas.png" alt="esa"><li class="instructions-list">You can score minus 10 points if one of your combos has 4 cards and you end up the round with no spare cards</li>
+            <img class="cardimg" src="imgs/oro.png" alt="esa"><li class="instructions-list">To finish the round you need to have 2 combos or chinchon(7 consecutive cards) and put a card that is equal or less than 5 upside down </li>
+            <img class="cardimg basto" src="imgs/basto.png" alt="esa"><li class="instructions-list">At the end of the round, the cards without combos are counted as points (spare joker scores 25) and added to the players</li>
+            <img class="cardimg" src="imgs/espada.png" alt="esa"><li class="instructions-list">If someone scores 70 or 100(as desired) the game ends for that person and the rest continue<li></li>
+        </ul>
+        <div class="button-father"><button class="closing-instructions" name="close-instructions">Accept</button></div>
+    </section>
+    <script src="chinchon.js"></script>
+
+</body>
+</html>

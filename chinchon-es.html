@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Contador Puntos de Chinchon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="chinchon.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a80cd1a228.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Chinchón</title>
+</head>
+<body>
+   <div id="wholeAppId" class="wholeapp">
+     <!-- Nav SHEET --> 
+    <nav class="navbar">
+            <h1 class="h1nav">Anotador Chinchón</h1>
+            <div class="languages">
+            <a href="chinchon-es.html" class="langimg spanish">  <img src="imgs/es.png" width="30" height="30" ></a>
+            <a href="../chinchon-en.html" class="langimg english"> <img src="imgs/en.png" width="30" height="30"></a>
+            </div>
+      </nav>
+    <div id="OptionsHome" class="options">
+    <button id="newGame" class="option-button "><i class="fa-solid fa-diamond"></i>Nuevo Juego</button>
+    <button id="instructions" class="option-button"><i class="fa-solid fa-clipboard"></i> Instrucciones</button>
+    </div>
+
+     <!-- Setting Options SHEET --> 
+
+    <div id="selectOptions" class="game hide ">
+        <div class="players">
+            <h4 class="Players-sign"> Participantes</h4>
+            <ul id="playersUl" class="playersUl">
+            </ul>
+            <input type="text" id="player" placeholder="Nombre" class="input-game">
+            <span id="addPlayer" class="buttom-game" onclick="newElement()">Agregar</span>
+        </div>
+        <div class="objective">
+            <h4 class="Players-sign objectivePoints">¿A cuantos puntos jugamos?</h4>
+            <button id="to70" class="buttom-game" ">70</button>
+            <button id="to100" class="buttom-game">100</button>
+        </div>    
+        <button id="start" class="buttom-game">Comenzar!</button>
+    </div>
+
+    <!-- Game SHEET --> 
+    <section id="theGame"class="started-game hide">
+       <div class="playing-player">
+        <h3 id="p1"></h3>
+             <div class=" scoresFather ">
+            <p class="p1Score score">0</p>
+            <input type="number"  id="newpointP1" class="newpoint">
+            <input type="button" value="+" id="add-p1" class="add">
+            <input type="button" value="-" id="rest-p1" class="rest">
+             </div>
+       </div>
+       <div class="playing-player">
+        <h3 id="p2"></h3>
+             <div class=" scoresFather ">
+            <p class="p2Score score">0</p>
+            <input type="number"  id="newpointP2" class="newpoint">
+            <input type="button" value="+" id="add-p2" class="add">
+            <input type="button" value="-" id="rest-p2" class="rest">
+             </div>
+       </div>
+       <div class="playing-player">
+        <h3 id="p3"></h3>
+            <div class=" scoresFather hide">
+            <p class="p3Score score">0</p>
+             <input type="number"  id="newpointP3" class="newpoint">
+             <input type="button" value="+" id="add-p3" class="add">
+             <input type="button" value="-" id="rest-p3" class="rest">
+             </div>
+       </div>
+       <div class="playing-player">
+        <h3 id="p4"></h3>
+            <div class=" scoresFather hide">
+             <p class="p4Score score">0</p>
+             <input type="number"   id="newpointP4"class="newpoint">
+             <input type="button" value="+" id="add-p4" class="add">
+             <input type="button" value="-" id="rest-p4" class="rest">
+            </div>
+         </div>
+        <input type="button" value="Reiniciar" id="Restart" class="home">
+       <input type="button" value="Inicio" id="go-home" class="home" onClick="window.location.reload(true)">
+    </section>
+
+        <!-- Footer --> 
+
+    <footer>
+        <p class="produced">Producido por Joaquin Caceres</p>
+        <a class="media" target="_blank" href="mailto:joaquniarielcaceres@gmail.com"><i class="fa-sharp fa-regular fa-envelope"></i>Contacto</a>
+    </footer>
+    </div>  
+
+    <!-- INSTRUCTION SHEET --> 
+    <section class="instructions hide" id="instructions-id" >
+        <ul class="instructions-ul">
+            <img class="cardimg" src="imgs/espada.png" alt="esa"><li class="instructions-list">Juego de Cartas de 2 a 4 jugadores <li>
+            <img class="cardimg" src="imgs/copas.png" alt="esa"><li class="instructions-list">El objetivo es tener la menor cantidad de puntos posibles</li>
+            <img class="cardimg" src="imgs/oro.png" alt="esa"><li class="instructions-list">Se Reparten 7 cartas por jugador y una boca arriba</li>
+            <img class="cardimg basto" src="imgs/basto.png" alt="esa"><li class="instructions-list"> Comienza el jugador de la derecha, siempre levanta una carta y tira una por turno</li>
+            <img class="cardimg" src="imgs/espada.png" alt="esa"><li class="instructions-list">El objetivo es hacer "juegos" ya sea con 3 o mas cartas del mismo numero o consecutivas del mismo tipo</li>
+            <img class="cardimg" src="imgs/copas.png" alt="esa"><li class="instructions-list">Menos 10 es cuando una mano tiene un juego de 4 cartas y uno de 3 cartas</li>
+            <img class="cardimg" src="imgs/oro.png" alt="esa"><li class="instructions-list">La ronda finaliza cuando un jugador pone una carta igual o menor a 5 boca abajo</li>
+            <img class="cardimg basto" src="imgs/basto.png" alt="esa"><li class="instructions-list">Al finalizar la ronda se cuentan los puntos de cada carta (comodin sin usar 25 puntos) y se suman a los jugadores</li>
+            <img class="cardimg" src="imgs/espada.png" alt="esa"><li class="instructions-list">El jugador que llega a 70 o 100 pierde y el resto continua <li></li>
+        </ul>
+        <div class="button-father"><button class="closing-instructions" name="close-instructions">Aceptar</button></div>
+    </section>
+    <script src="chinchon.js"></script>
+
+</body>
+</html>
